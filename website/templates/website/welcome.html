@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+<head>
+    <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .navbar {
+            background: #fff;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom: 1px solid #dfe3e8;
+            border-radius: 0;
+        }
+
+        .navbar .navbar-brand {
+            padding-left: 0;
+            font-size: 20px;
+            padding-right: 50px;
+        }
+
+        .navbar .navbar-brand b {
+            color: #33cabb;
+        }
+
+        .navbar .sign-up-btn {
+            min-width: 110px;
+            max-height: 36px;
+        }
+
+        .navbar a,
+        .navbar a:active {
+            color: #888;
+            padding: 8px 20px;
+            background: transparent;
+            line-height: normal;
+        }
+
+        .navbar .btn-primary,
+        .navbar .btn-primary:active {
+            color: #fff;
+            background: #33cabb !important;
+            border: none;
+        }
+
+        .navbar .btn-primary:hover,
+        .navbar .btn-primary:focus {
+            color: #fff;
+            background: #31bfb1 !important;
+        }
+
+        .navbar .social-btn .btn,
+        .navbar .social-btn .btn:hover {
+            color: #fff;
+            margin: 0;
+            padding: 0 !important;
+            font-size: 13px;
+            border: none;
+            transition: all 0.4s;
+            text-align: center;
+            line-height: 34px;
+            width: 47%;
+            text-decoration: none;
+        }
+
+        .or-seperator {
+            margin-top: 32px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand">Meeting<b>Planner</b></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+            <div class="navbar-nav ml-auto action-buttons">
+
+                <a href="{% url 'login' %}" class="nav-link mr-4">Login</a>
+                <a href="{% url 'signup' %}"  class="btn btn-primary sign-up-btn">Sign
+                    up</a>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
+<h1>Welcome to the meeting planner!</h1>
+<p>
+    This is the demo application for the course
+    <em>Django: getting started</em>
+    on <a href="https://www.pluralsight.com">
+        Pluralsight</a>
+</p>
+<img src="static/website/calendar.png" width="100" height="100">
+<h2>Meetings</h2>
+<ul>
+    {% for meeting in meetings %}
+    <li>
+        <a href="{% url 'detail' meeting.id %}">
+            {{meeting.title}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<h3>
+    <a href="{% url 'room' %}">
+        Rooms List
+    </a>
+</h3>
+{% endblock %}

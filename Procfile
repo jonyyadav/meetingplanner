@@ -1,0 +1,1 @@
+web:gunicorn meeting_planner.wsgi
