@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-lw%4bv)w-*ox(22p9gx#uf@$8e1f005+u691p860bv!8(5n+f!
 DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['https://meeting1234qwer.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['https://meeting123qwe.herokuapp.com/','127.0.0.1']
 
 
 
