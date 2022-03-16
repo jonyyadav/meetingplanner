@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'meeting',
     'rest_framework_simplejwt',
     'crispy_forms',
+    'django-wsgiserver'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
